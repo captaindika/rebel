@@ -1,0 +1,95 @@
+1) Modifiers private adalah
+    modifiers/properti dari sebuah class yang tidak dapat diakses dari luar kelas tersebut dan hanya bisa diakses oleh fungsi pada kelas itu sendiri
+    contoh :
+class Orang {
+	#namaDepan: string;
+	#namaBelakang: string;
+	#prefiks: string;
+
+	constructor(namaDepan: string, namaBelakang: string, prefiks: string) {
+		this.#namaDepan = namaDepan;
+		this.#namaBelakang = namaBelakang;
+		this.#prefiks = prefiks;
+	}
+}
+di typescript private identifier ditandakan dengan '#'
+let jeremy = new Orang("Jeremy", "Bearimy", "Mr");
+console.log(jeremy.#namaBelakang); // maka akan muncul eror
+
+source: https://www.typescriptlang.org/id/play?ts=3.8.3&ssl=10&ssc=1&pln=19&pc=4#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
+
+2) Modifiers public adalah modifier/properti dari sebuah class yang dapat diakses dari luar kelas maupun kelas itu sendiri
+contoh :
+class Barang {
+	constructor(name, price) {
+		(this.name = name), (this.price = price);
+	}
+}
+const barang1 = new Barang("laptop", 5000); // maka value barang1.name adalah laptop dan barang1.price adalah 5000
+
+3) modifiers protected adalah modifier/properties yang hanya dapat diakses oleh kelas itu sendiri dan sub kelas/ turunan dari kelas tersebut 
+contoh: 
+class Employee {
+  public empName: string;
+  protected empCode: number;
+
+  constructor(name: string, code: number){
+      this.empName = name;
+      this.empCode = code;
+  }
+}
+
+class SalesEmployee extends Employee{
+  private department: string;
+  
+  constructor(name: string, code: number, department: string) {
+      super(name, code);
+      this.department = department;
+  }
+}
+
+properti empCode dapat diakses oleh kelas Employee dan juga SalesEmployee
+
+______________________________________________________________________________
+Modifier static adalah
+modifier yang dapat diakses tanpa harus menginisiasi / membuat objek class nya terlebih dahulu, contoh:
+class Circle {
+  static pi = 3.14;
+}
+
+Circle.pi; // mengembalikan value 3.14
+
+Modifier final adalah
+modifier yang valuenya tidak dapat diubah, kalau dari hasil googling sih di typescript ga ada syntax final
+
+_________________________________________________________________________________
+
+Class inheritance
+adalah sebuah kelas yang merupakan subclass/turunan dari kelas lain, kelas ini memiliki property/modifier yang sama dari kelas induknya
+contoh :
+class People {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+}
+
+class Person extends People { // mendefinisikan bahwa kelas person subkelas dari people
+  constructor(name, age, gender) {
+    super(name, age) // properti name dan age ini merupakan warisan dari kelas induknya yaitu people
+    this.gender = gender
+  }
+}
+
+____________________________________________________________
+Design pattern faced (mungkin yang dimaksud facade)
+adalah sebuah design pattern yang menyediakan interface yang disederhanakan ke library, framework atau kumpulan kelas yang kompleks lainnya
+analoginya :
+ketika kita melakukan panggilan pada layanan telepon, operator telepon merupakan orang yang menghubungkan kita pada bermacam macam layanan. Operator telepon inilah yang bisa kita analogikan sebagai facade design pattern
+source: https://refactoring.guru/design-patterns/facade
+
+
+design pattern factory adalah sebuah design pattern yang menyediakan sebuah interface untuk membuat sebuah objek pada superclass,  akan tetapi mengijinkan subkelas / kelas turunannya untuk mengubah tipe dari objek yang akan dibuat
+contoh : terdapat sebuah kelas logistik pengiriman, dimana awalnya hanya bisa melalui jalur darat dan terdapat update bisa melalui jalur air
+maka dari itu ada kelas induk/ superclass berupa kelas logistik dan terdapat dua subkelas RoadLogistic dan SeaLogistic
+source : https://refactoring.guru/design-patterns/factory-method
